@@ -1,1 +1,5 @@
+Link Repo
+https://github.com/cocomdidin/a433-microservices/tree/proyek-pertama
+
+Link Docker Hub
 https://hub.docker.com/r/cocomdidin/item-app/tags
