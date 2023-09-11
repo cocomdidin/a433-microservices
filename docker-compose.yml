@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  item-app:
+    image: cocomdidin/item-app:v1 # Menggunakan image dari Docker Hub
+    ports:
+      - "80:8080" # Port 80 dari host di-mapping ke port 8080 di dalam container
+    depends_on:
+      - item-db # Memastikan service item-app hanya berjalan setelah item-db diluncurkan.
+    restart: always # Restart policy untuk service item-app
+
+  item-db:
+    image: mongo:3 # Menggunakan image mongo:3 dari Docker Hub.
+    volumes:
+      - app-db:/data/db # Memakai volume app-db dengan target /data/db di container.
+    restart: always # Restart policy untuk service item-db
+
+volumes:
+  app-db: # Membuat volume bernama app-db.
